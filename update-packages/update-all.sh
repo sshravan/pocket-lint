@@ -176,11 +176,9 @@ if sudo -v; then
             sudo apt-get dist-upgrade -y &&
             sudo apt-get autoremove
     fi
-
-    # Clear cached credentials after package maintenance
-    sudo -k
 else
     echo "❌ Sudo authentication failed; skipping package updates." >&2
 fi
-
+# Clear cached credentials after package maintenance
+sudo -k
 echo -e "\n${GREEN}✨ All updates finished successfully! ✨${RESET}\n"
